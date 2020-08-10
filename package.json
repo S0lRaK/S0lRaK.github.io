@@ -25,7 +25,14 @@
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "git-scripts": "^0.4.3",
+    "prettier": "2.0.5",
+    "surge": "^0.21.6"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "npm run build && surge --project public/"
+    }
   },
   "repository": {
     "type": "git",
