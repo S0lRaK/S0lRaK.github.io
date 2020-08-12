@@ -21,10 +21,7 @@
   "devDependencies": {
     "prettier": "2.0.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
+  "repository": "github:S0lRaK/S0lRaK.github.io",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
