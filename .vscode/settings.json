@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "deployment",
         "editor",
-        "build"
+        "build",
+        "repo"
     ]
 }
