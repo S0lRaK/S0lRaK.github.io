@@ -1,18 +1,14 @@
-body,
 html {
-  height: 100%;
-  margin: 0;
-}
-
-.backgroundImage {
   /* The image used */
   background-image: url(../images/Tent-Ridge-Horseshoe.jpeg);
-
-  /* Full height */
-  height: 100%;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+}
+
+.fullPage {
+  /* Full height */
+  height: 100%;
 }
