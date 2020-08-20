@@ -4,6 +4,7 @@
     font-size: 10vw; /* Responsive font size */
     font-weight: bold;
     margin: 0 auto; /* Center the text container */
+    border-radius: 2%;
     padding: 1rem 4rem;
     width: fit-content;
     text-align: center; /* Center text */
