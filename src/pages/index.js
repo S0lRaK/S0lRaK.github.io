@@ -1,6 +1,11 @@
 import React from "react"
-import ContainerFullPage from "../components/container-full-page"
+import FullPageImageBackground from "../components/full-page-image-background"
+import TextCutout from "../components/text-cutout"
 
 export default function Home() {
-  return <ContainerFullPage />
+  return (
+    <FullPageImageBackground>
+      <TextCutout text="Coming Soon"></TextCutout>
+    </FullPageImageBackground>
+  )
 }

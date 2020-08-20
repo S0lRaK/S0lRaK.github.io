@@ -1,0 +1,15 @@
+.text {
+    background-color: rgb(255 255 255 / 80%);
+    color: black;
+    font-size: 10vw; /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto; /* Center the text container */
+    padding: 1rem 4rem;
+    width: fit-content;
+    text-align: center; /* Center text */
+    position: absolute; /* Position text */
+    top: 20%;
+    left: 50%; /* Position text in the middle */
+    transform: translate(-50%, -50%); /* Position text in the middle */
+    mix-blend-mode: screen; /* This makes the cutout text possible */
+  }
