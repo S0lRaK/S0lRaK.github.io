@@ -5,10 +5,26 @@ name: Publish to testing server
 on:
   pull_request:
     types: [synchronize]
+    branches: [ dev ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build project
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+        - run: npm ci
+        - run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v2
+        with:
+          name: gatsby-build
+          path: ./public/
   deploy:
+    needs: build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -16,14 +32,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Build project
-        uses: actions/setup-node@v1
+      - name: Download build
+        uses: actions/download-artifact@v2
         with:
-          node-version: '12.x'
-        - run: npm ci
-        - run: npm run build
-
+          name: gatsby-build
       - name: Publish to surge.sh
         # You may pin to the exact commit or the version.
         # uses: dswistowski/surge-sh-action@341bcbd76a97da5e6b55ad92f53c0bf840e04c80
