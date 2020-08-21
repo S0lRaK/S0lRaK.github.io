@@ -1,5 +1,11 @@
 import React from "react"
+import FullPageImageBackground from "../components/full-page-image-background"
+import TextCutout from "../components/text-cutout"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <FullPageImageBackground>
+      <TextCutout text="Coming Soon"></TextCutout>
+    </FullPageImageBackground>
+  )
 }
