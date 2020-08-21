@@ -5,6 +5,7 @@
         "build",
         "repo",
         "ui",
-        "package"
+        "package",
+        "test"
     ]
 }
