@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build project
         uses: actions/setup-node@v1
-        - run: npm ci
-        - run: npm run build
+      - run: npm ci
+      - run: npm run build
       - name: Upload build
         uses: actions/upload-artifact@v2
         with:
