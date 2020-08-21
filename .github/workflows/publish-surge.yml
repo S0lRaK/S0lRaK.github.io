@@ -12,9 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout respository
+        uses: actions/checkout@v2
       - name: Build project
         uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - run: npm ci
       - run: npm run build
       - name: Upload build
@@ -30,11 +33,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Download build
         uses: actions/download-artifact@v2
         with:
           name: gatsby-build
+          path: ./public/
       - name: Publish to surge.sh
         # You may pin to the exact commit or the version.
         # uses: dswistowski/surge-sh-action@341bcbd76a97da5e6b55ad92f53c0bf840e04c80
