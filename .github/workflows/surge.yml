@@ -1,5 +1,5 @@
 # Worflow to publish to Surge when a pull request is closed into dev branch
-name: Publish to testing server
+name: Surge
 
 # Controls when the action will run.
 on:
