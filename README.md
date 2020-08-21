@@ -1,4 +1,4 @@
-![CI](https://github.com/S0lRaK/S0lRaK.github.io/workflows/CI/badge.svg)
+![Publish to production server](https://github.com/S0lRaK/S0lRaK.github.io/workflows/Publish%20to%20production%20server/badge.svg?branch=dev)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
