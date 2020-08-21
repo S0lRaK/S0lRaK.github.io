@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [synchronize]
     branches: [ dev ]
-
+    
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Build project
         uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
         - run: npm ci
         - run: npm run build
       - name: Upload build

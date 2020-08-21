@@ -1,5 +1,5 @@
-# Continuous Integration workflow
-name: CI
+# Worflow to publish to GitHub Pages when a push is done into dev branch
+name: Publish to production server
 
 # Controls when the action will run.
 on:
