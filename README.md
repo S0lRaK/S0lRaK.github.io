@@ -1,4 +1,5 @@
-![Publish to production server](https://github.com/S0lRaK/S0lRaK.github.io/workflows/Publish%20to%20production%20server/badge.svg?branch=dev)
+[![license](https://img.shields.io/badge/license-0BSD-green.svg)](https://github.com/S0lRaK/S0lRaK.github.io/blob/dev/LICENSE)
+![GitHub Pages](https://github.com/S0lRaK/S0lRaK.github.io/workflows/GitHub%20Pages/badge.svg?branch=dev)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
