@@ -4,6 +4,7 @@
         "editor",
         "build",
         "repo",
-        "ui"
+        "ui",
+        "package"
     ]
 }
