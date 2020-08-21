@@ -1,4 +1,4 @@
-# Worflow to publish to GitHub Pages when a pull request is closed into master branch
+# Worflow to publish to GitHub Pages when a push is done into dev branch
 name: Publish to production server
 
 # Controls when the action will run.
