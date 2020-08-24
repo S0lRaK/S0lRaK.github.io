@@ -1,5 +1,6 @@
 [![license](https://img.shields.io/badge/license-0BSD-green.svg)](https://github.com/S0lRaK/S0lRaK.github.io/blob/dev/LICENSE)
 ![GitHub Pages](https://github.com/S0lRaK/S0lRaK.github.io/workflows/GitHub%20Pages/badge.svg?branch=dev)
+[![CodeFactor](https://www.codefactor.io/repository/github/s0lrak/s0lrak.github.io/badge/dev)](https://www.codefactor.io/repository/github/s0lrak/s0lrak.github.io/overview/dev)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
