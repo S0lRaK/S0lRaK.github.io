@@ -6,6 +6,7 @@
         "repo",
         "ui",
         "package",
-        "test"
+        "test",
+        "maintainability"
     ]
 }
