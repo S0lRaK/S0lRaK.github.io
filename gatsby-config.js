@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Carlos J. Garcia Carmona`,
-    description: `Carlos J. Garcia Carmona's personal site.`
+    title: `Title from siteMetadata`,
+    description: `Gatsby tutorial`
   },
   plugins: [
     `gatsby-transformer-remark`,
