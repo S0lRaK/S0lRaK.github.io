@@ -5,25 +5,27 @@ import { Fade } from 'react-awesome-reveal';
 import SocialLink from './SocialLink';
 import Link from './Link';
 import { useSiteQuery } from '../queries/useSiteQuery';
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from '../utils/constants';
+import { CONTENTFUL_URL, GATSBY_URL, GITHUB_PAGES_URL } from '../utils/constants';
 
 const Footer = () => {
-  const { name, socialLinks } = useSiteQuery();
+  const { description, socialLinks } = useSiteQuery();
 
   return (
     <Box p={[2, 3]} backgroundColor="primary" id="footer">
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <TextWrapper fontSize={[2, 3]}>
-            <span>{`${name} Portfolio - Powered by `}</span>
+            <span>{`${description}`}</span>
+            <br/>
+            <span>{`Powered by `}</span>
             <Link href={GATSBY_URL}>Gatsby</Link>
             <span>, </span>
             <Link href={CONTENTFUL_URL}>Contentful</Link>
             <span> and </span>
-            <Link href={NETLIFY_URL}>Netlify</Link>{' '}
-            <span role="img" aria-label="heart">
+            <Link href={GITHUB_PAGES_URL}>GitHub Pages</Link>{' '}
+            {/* <span role="img" aria-label="heart">
               ❤️
-            </span>
+            </span> */}
           </TextWrapper>
         </Fade>
         <Flex>
@@ -50,6 +52,7 @@ const FooterContainer = styled.div`
 
   @media (max-width: 400px) {
     flex-direction: column-reverse;
+    text-align: center;
 
     & > * {
       margin-bottom: 10px;
