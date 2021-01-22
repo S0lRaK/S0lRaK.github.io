@@ -21,7 +21,7 @@ export const CardContainer = styled.div<CardContainerProps>`
 `;
 
 export const Card = styled(CardRebass).attrs({
-  bg: 'white',
+  bg: 'gray',
   boxShadow: 0,
 })`
   position: relative;
