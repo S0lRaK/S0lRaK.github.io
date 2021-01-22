@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const StyledLink = styled.a`
   display: inline-block;
   transition: color 250ms, text-shadow 250ms;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.textLight};
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -25,7 +25,7 @@ const StyledLink = styled.a`
   }
 
   &:hover {
-    color: white;
+    color: black;
 
     &::after {
       height: 110%;
