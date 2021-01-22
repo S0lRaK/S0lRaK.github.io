@@ -41,11 +41,11 @@ const SocialLink = ({ icon, name, url, invert }: Props) => {
 const IconLink = styled(Link)<{ invert?: boolean }>`
   transition: color 0.4s;
   color: ${({ theme, invert }) =>
-    invert ? theme.colors.background : theme.colors.primary};
+    invert ? theme.colors.background : theme.colors.secondary};
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => lighten(0.3, theme.colors.primary)};
+    color: ${({ theme }) => lighten(0.3, theme.colors.secondary)};
   }
 `;
 
