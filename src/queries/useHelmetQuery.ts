@@ -5,7 +5,7 @@ type QueryResponse = {
   contentfulAbout: {
     name: string;
     description: string;
-    profile: {
+    icon: {
       favicon16: Favicon;
       favicon32: Favicon;
       bigIcon: Favicon;
@@ -20,7 +20,7 @@ export const useHelmetQuery = () => {
       contentfulAbout {
         name
         description
-        profile {
+        icon {
           favicon16: resize(width: 16) {
             src
           }

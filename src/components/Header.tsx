@@ -36,14 +36,14 @@ const Header = () => {
 };
 
 const HomeLink = () => {
-  const { profile } = useHelmetQuery();
+  const { icon } = useHelmetQuery();
   const { onClick } = useScrollSection('home');
 
   return (
     <Button onClick={onClick} variant="empty">
       <Flex justifyContent="center">
         <Image
-          src={profile.bigIcon.src}
+          src={icon.bigIcon.src}
           height={['60px', '80px']}
           width={['60px', '80px']}
           alt="Portfolio Logo"
