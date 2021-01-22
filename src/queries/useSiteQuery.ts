@@ -4,6 +4,7 @@ import { Landing, SocialLink } from '../types';
 type QueryResponse = {
   contentfulAbout: {
     name: string;
+    description: string;
     roles: string[];
     socialLinks: SocialLink[];
   };
@@ -19,6 +20,7 @@ export const useSiteQuery = (): Landing & { deterministic: boolean } => {
     query SiteQuery {
       contentfulAbout {
         name
+        description
         roles
         socialLinks {
           url

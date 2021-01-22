@@ -47,6 +47,7 @@ export type MediumAuthor = {
 
 export type Landing = {
   name: string;
+  description: string;
   roles: string[];
   socialLinks: SocialLink[];
 };
