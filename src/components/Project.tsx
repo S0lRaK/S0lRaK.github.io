@@ -22,11 +22,11 @@ const Project = ({
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
-          <Title my={2} pb={1} color="text">
+          <Title my={2} pb={1} color="textLight">
             {name}
           </Title>
         </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+        <Text width={[1]} style={{ overflow: 'auto' }} color="textLight">
           {description}
         </Text>
       </TextContainer>
@@ -47,11 +47,11 @@ const Project = ({
               <SocialLink name="Homepage" icon="globe" url={homepage} />
             </Box>
           </Flex>
-          <ImageLabel bg="primary" color="white" position="bottom-right" round>
+          <ImageLabel bg="accentLight" color="primary" position="bottom-right" round>
             {type}
           </ImageLabel>
           <Hide query="md">
-            <ImageLabel bg="muted">{publishedDate}</ImageLabel>
+            <ImageLabel bg="accentLight" color="primary">{publishedDate}</ImageLabel>
           </Hide>
         </ProjectTag>
       </ImageContainer>

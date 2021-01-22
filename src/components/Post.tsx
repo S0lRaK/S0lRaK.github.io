@@ -11,14 +11,14 @@ type PostProps = MediumPostType;
 
 export const Post = ({ title, text, cover, url, date, time }: PostProps) => (
   <PostContainer url={url} title={title}>
-    <EllipsisHeading m={3} color="text">
+    <EllipsisHeading m={3} color="textLight">
       {title}
     </EllipsisHeading>
     {cover && <CoverImage src={cover} height="200px" alt={title} />}
-    <Text m={3} color="text">
+    <Text m={3} color="textLight">
       {text}
     </Text>
-    <ImageLabel bg="primary" color="white" position="bottom-right" round>
+    <ImageLabel bg="accent" color="primary" position="bottom-right" round>
       {`${date} - ${Math.ceil(time)} min`}
     </ImageLabel>
   </PostContainer>
