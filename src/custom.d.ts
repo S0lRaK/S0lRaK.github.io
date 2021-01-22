@@ -16,13 +16,16 @@ declare module '@rebass/preset' {
   }
 
   interface Colors {
-    text: string;
+    textLight: string;
+    textDark: string;
     background: string;
     primary: string;
     secondary: string;
     muted: string;
     gray: string;
     highlight: string;
+    accent: string;
+    accentLight: string;
   }
 
   interface Fonts {

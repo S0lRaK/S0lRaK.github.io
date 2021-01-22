@@ -11,14 +11,17 @@ const BASE_THEME = preset as Theme;
 const theme: Theme = {
   ...BASE_THEME,
   colors: {
-    background: '#FFFFFF',
-    muted: '#f0e6f6',
-    gray: '#ddd',
-    text: '#333333',
+    background: '#000000',
+    muted: '#5A1CA6',
+    gray: '#333333',
+    textLight: '#FFFFFF',
+    textDark: '#000000',
 
-    primary: '#7c37ad',
-    secondary: '#ff4081',
-    highlight: '#ff79b0',
+    primary: '#F1EE58',
+    secondary: '#A6A42D',
+    highlight: '#FFFD78',
+    accent: '#5A1CA6',
+    accentLight: '#7C2AF7'
   },
   queries: {
     xs: '@media screen and (max-width: 40em)',
