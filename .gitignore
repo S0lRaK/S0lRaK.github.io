@@ -54,9 +54,13 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# Next.js build output
+.next
+
+# Gatsby files
 .cache/
 public
+.gatsby-context.js
 
 # Yarn
 yarn-error.log
@@ -64,6 +68,9 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Project
+about.json
 
 ### VisualStudioCode ###
 .vscode/*

@@ -20,6 +20,9 @@ jobs:
           node-version: '12.x'
       - run: npm ci
       - run: npm run build
+        with:
+          contentful_space_id: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          contentful_access_token: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       - name: Upload build
         uses: actions/upload-artifact@v2
         with:
