@@ -2,7 +2,7 @@
   "name": "carlos-garcia-carmona-personal-site",
   "private": true,
   "description": "Carlos J. Garcia Carmona personal site",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Carlos J. Garcia Carmona <carlosj.gc989@gmail.com> (carlosgarciacarmona.me)",
   "main": "index.js",
