@@ -8,35 +8,35 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
   deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
+    # Downloads and extracts uploaded artifact associated with given workflow and commit
+    - name: Download artifact
+      uses: dawidd6/action-download-artifact@v2
       with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+        # Required, workflow file name or ID
+        workflow: surge.yml
+        # Optional, the status or conclusion of a completed workflow to search for
+        # Can be one of a workflow conclusion:
+        # "failure", "success", "neutral", "cancelled", "skipped", "timed_out", "action_required"
+        # Or a workflow status:
+        # "completed", "in_progress", "queued"
+        # Default: "completed"
+        workflow_conclusion: success
 
-    - run: npm ci
-    - run: npm run format
-    - run: npm run test
-    - run: npm run build
-
+    # Deploys static files to GitHub Pages
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        publish_dir: ./public
-        publish_branch: master
         cname: carlosgarciacarmona.me
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
