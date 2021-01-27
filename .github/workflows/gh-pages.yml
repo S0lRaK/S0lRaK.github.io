@@ -31,6 +31,8 @@ jobs:
         # "completed", "in_progress", "queued"
         # Default: "completed"
         workflow_conclusion: success
+        # Optional, directory where to extract artifact
+        path: ./public
 
     # Deploys static files to GitHub Pages
     - name: Deploy
