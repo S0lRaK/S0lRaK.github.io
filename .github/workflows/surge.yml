@@ -9,25 +9,59 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  
   build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout respository
         uses: actions/checkout@v2
-      - name: Build project
-        uses: actions/setup-node@v1
+      
+      # Caches dependencies and build outputs to improve workflow execution time
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          node-version: '12.x'
-      - run: npm ci
-      - run: npm run build
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      
+      - name: Set Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      
+      # Install Node dependencies with NPM
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Format
+        run: npm run format
+
+      # Build project with Contentful tokens
+      - name: Build
+        run: npm run build
         env:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+
+      # - name: Test
+      #   run: npm run test
+      
+      # Uploads artifacts from your workflow allowing you to share data between jobs and store data once a workflow is complete
       - name: Upload build
         uses: actions/upload-artifact@v2
         with:
           name: gatsby-build
           path: ./public/
+  
   deploy:
     needs: build
     # The type of runner that the job will run on
@@ -38,15 +72,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v2
+      
+      # Downloads artifacts from your build
       - name: Download build
         uses: actions/download-artifact@v2
         with:
           name: gatsby-build
           path: ./public/
+      
+      # Deploy project to Surge
       - name: Publish to surge.sh
         # You may pin to the exact commit or the version.
         # uses: dswistowski/surge-sh-action@341bcbd76a97da5e6b55ad92f53c0bf840e04c80
-        uses: dswistowski/surge-sh-action@v1.0.0
+        uses: dswistowski/surge-sh-action@v1.0.1
         with:
           # your surge.sh domain to deploy
           domain: ${{ secrets.SURGE_DOMAIN }}
