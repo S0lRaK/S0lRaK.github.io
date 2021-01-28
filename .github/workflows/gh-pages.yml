@@ -44,6 +44,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        publish_dir: ./public
         cname: carlosgarciacarmona.me
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
