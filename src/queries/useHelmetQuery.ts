@@ -4,6 +4,7 @@ import { Favicon } from '../types';
 type QueryResponse = {
   contentfulAbout: {
     name: string;
+    fullName: string;
     description: string;
     icon: {
       favicon16: Favicon;
@@ -20,6 +21,7 @@ export const useHelmetQuery = () => {
     query HelmetQuery {
       contentfulAbout {
         name
+        fullName
         description
         icon {
           favicon16: resize(width: 16) {
