@@ -10,6 +10,7 @@ type QueryResponse = {
       favicon32: Favicon;
       bigIcon: Favicon;
       appleIcon: Favicon;
+      description: string;
     };
   };
 };
@@ -33,6 +34,7 @@ export const useHelmetQuery = () => {
           appleIcon: resize(width: 180) {
             src
           }
+          description
         }
       }
     }
