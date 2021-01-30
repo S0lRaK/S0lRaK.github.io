@@ -8,13 +8,11 @@ type Props = {
 };
 
 const Helmet = ({ theme }: Props) => {
-  const { name, description, icon } = useHelmetQuery();
-  const title = `${name}' place`;
-
-  console.log(`https:${icon.bigIcon.src}`);
+  const { name, fullName, description, icon, imageLinkPreview } = useHelmetQuery();
+  const title = `${name}' personal site`;
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: 'en' }}>
+    <ReactHelmet htmlAttributes={{ lang: 'en', prefix: 'og: https://ogp.me/ns#'}}>
       <meta charSet="utf-8" />
       <title>{description}</title>
       <meta name="description" content={description} />
@@ -24,12 +22,16 @@ const Helmet = ({ theme }: Props) => {
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={`https:${icon.favicon32.src}`} />
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={description} />
-      <meta name="og:image" content={`https:${icon.bigIcon.src}`} />
-      <meta name="og:site_name" content={title} />
-      <meta name="og:locale" content="en_US" />
-      <meta name="og:type" content="website" />
+      <meta name="author" content={fullName} />
+      <meta property="og:title" name="title" content={title} />
+      <meta property="og:description" name="description" content={description} />
+      <meta property="og:image" name="image" content={`https:${imageLinkPreview.file.url}`} />
+      <meta property="og:image:alt" content={`https:${imageLinkPreview.description}`} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://carlosgarciacarmona.me" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
