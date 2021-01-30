@@ -25,8 +25,8 @@ const Helmet = ({ theme }: Props) => {
       <meta name="author" content={fullName} />
       <meta property="og:title" name="title" content={title} />
       <meta property="og:description" name="description" content={description} />
-      <meta property="og:image" name="image" content={`https:${imageLinkPreview.src}`} />
-      <meta property="og:image:alt" content={`https:${imageLinkPreview.alt}`} />
+      <meta property="og:image" name="image" content={`https:${imageLinkPreview.file.url}`} />
+      <meta property="og:image:alt" content={`https:${imageLinkPreview.description}`} />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:site_name" content={title} />
       <meta property="og:locale" content="en_CA" />
