@@ -13,7 +13,12 @@ type QueryResponse = {
       appleIcon: Favicon;
       description: string;
     };
-    imageLinkPreview: Image;
+    imageLinkPreview: {
+      file: {
+        url: string;
+      };
+      description: string;
+    };
   };
 };
 
@@ -40,7 +45,10 @@ export const useHelmetQuery = () => {
           description
         }
         imageLinkPreview {
-          src
+          file {
+            url
+          }
+          description
         }
       }
     }
