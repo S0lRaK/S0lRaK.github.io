@@ -8,10 +8,8 @@ type Props = {
 };
 
 const Helmet = ({ theme }: Props) => {
-  const { name, fullName, description, icon } = useHelmetQuery();
+  const { name, fullName, description, icon, imageLinkPreview } = useHelmetQuery();
   const title = `${name}' personal site`;
-
-  console.log(`https:${icon.bigIcon.src}`);
 
   return (
     <ReactHelmet htmlAttributes={{ lang: 'en', prefix: 'og: https://ogp.me/ns#'}}>
@@ -27,8 +25,8 @@ const Helmet = ({ theme }: Props) => {
       <meta name="author" content={fullName} />
       <meta property="og:title" name="title" content={title} />
       <meta property="og:description" name="description" content={description} />
-      <meta property="og:image" name="image" content={`https:${icon.bigIcon.src}`} />
-      <meta property="og:image:alt" content={`https:${icon.description}`} />
+      <meta property="og:image" name="image" content={`https:${imageLinkPreview.src}`} />
+      <meta property="og:image:alt" content={`https:${imageLinkPreview.alt}`} />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:site_name" content={title} />
       <meta property="og:locale" content="en_CA" />
