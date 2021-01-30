@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { Favicon } from '../types';
+import { Favicon, Image } from '../types';
 
 type QueryResponse = {
   contentfulAbout: {
@@ -13,6 +13,7 @@ type QueryResponse = {
       appleIcon: Favicon;
       description: string;
     };
+    imageLinkPreview: Image;
   };
 };
 
@@ -37,6 +38,9 @@ export const useHelmetQuery = () => {
             src
           }
           description
+        }
+        imageLinkPreview {
+          src
         }
       }
     }
