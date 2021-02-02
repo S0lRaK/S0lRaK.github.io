@@ -14,7 +14,7 @@ const Helmet = ({ theme }: Props) => {
   return (
     <ReactHelmet htmlAttributes={{ lang: 'en', prefix: 'og: https://ogp.me/ns#'}}>
       <meta charSet="utf-8" />
-      <title>{description}</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`https:${icon.favicon32.src}`} />
       <meta name="theme-color" content={theme.colors.background} />
