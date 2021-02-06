@@ -22,6 +22,7 @@ jobs:
       # Caches dependencies and build outputs to improve workflow execution time
       - name: Cache dependencies
         uses: actions/cache@v2
+        id: cache
         env:
           cache-name: cache-node-modules
         with:
@@ -40,6 +41,7 @@ jobs:
 
       # Install Node dependencies with NPM
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Format
