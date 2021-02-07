@@ -1,0 +1,26 @@
+version: 2
+updates:
+# Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates once each week
+    schedule:
+      interval: "weekly"
+      # Check for npm updates on Sundays
+      day: "saturday"
+      # Check for npm updates at 7am MST
+      time: "07:00"
+      # Use Mountain Standard Time (UTC -07:00)
+      timezone: "America/Edmonton"
+    # Raise all npm pull requests with an assignee
+    assignees:
+      - "S0lRaK"
+    commit-message:
+      prefix: "build(npm): :package:"
+      prefix-development: "build(npm dev): :package:"
+      include: "scope"
+    pull-request-branch-name:
+      # Separate sections of the branch name with a hyphen
+      # for example, `dependabot-npm_and_yarn-next_js-acorn-6.4.1`
+      separator: "-"
