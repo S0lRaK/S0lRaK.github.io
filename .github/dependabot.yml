@@ -17,8 +17,7 @@ updates:
     assignees:
       - "S0lRaK"
     commit-message:
-      prefix: "build(npm): :package:"
-      prefix-development: "build(npm dev): :package:"
+      prefix: "build::package:"
       include: "scope"
     pull-request-branch-name:
       # Separate sections of the branch name with a hyphen
