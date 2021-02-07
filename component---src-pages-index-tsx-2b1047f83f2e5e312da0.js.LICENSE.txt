@@ -5,13 +5,6 @@
  * @license  MIT
  */
 
-/*!
- * repeat-string <https://github.com/jonschlinkert/repeat-string>
- *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
- */
-
 /**!
 * tippy.js v5.2.1
 * (c) 2017-2020 atomiks
