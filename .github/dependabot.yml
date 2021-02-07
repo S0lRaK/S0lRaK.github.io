@@ -8,7 +8,7 @@ updates:
     schedule:
       interval: "weekly"
       # Check for npm updates on Sundays
-      day: "saturday"
+      day: "monday"
       # Check for npm updates at 7am MST
       time: "07:00"
       # Use Mountain Standard Time (UTC -07:00)
