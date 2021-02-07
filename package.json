@@ -2,9 +2,9 @@
   "name": "carlos-garcia-carmona-personal-site",
   "private": true,
   "description": "Carlos J. Garcia Carmona personal site",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
-  "author": "Carlos J. Garcia Carmona <carlosj.gc989@gmail.com> (carlosgarciacarmona.me)",
+  "author": "Carlos J. Garcia Carmona <carlosj.gc989@gmail.com> (https://carlosgarciacarmona.me)",
   "main": "index.js",
   "scripts": {
     "get-about": "ts-node --files src/scripts/get-about",
@@ -86,7 +86,7 @@
     "typescript": "^4.0.5"
   },
   "repository": "github:S0lRaK/S0lRaK.github.io",
-  "homepage": "https://github.com/S0lRaK/S0lRaK.github.io/issues",
+  "homepage": "https://carlosgarciacarmona.me",
   "bugs": {
     "url": "https://github.com/S0lRaK/S0lRaK.github.io/issues"
   },
