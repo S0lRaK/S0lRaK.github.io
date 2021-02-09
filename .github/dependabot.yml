@@ -4,11 +4,9 @@ updates:
   - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
-    # Check the npm registry for updates once each week
+    # Check the npm registry for updates once every weekday
     schedule:
-      interval: "weekly"
-      # Check for npm updates on Sundays
-      day: "monday"
+      interval: "daily"
       # Check for npm updates at 7am MST
       time: "07:00"
       # Use Mountain Standard Time (UTC -07:00)
@@ -19,6 +17,8 @@ updates:
     commit-message:
       prefix: "build::package:"
       include: "scope"
+    # Allow up to 1 open pull requests for npm dependencies
+    open-pull-requests-limit: 1
     pull-request-branch-name:
       # Separate sections of the branch name with a hyphen
       # for example, `dependabot-npm_and_yarn-next_js-acorn-6.4.1`
