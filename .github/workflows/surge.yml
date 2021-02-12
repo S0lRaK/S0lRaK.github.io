@@ -88,11 +88,9 @@ jobs:
       # Deploys project to Surge
       - name: Publish to surge.sh
         uses: dswistowski/surge-sh-action@v1.0.1
-        env:
-          SURGE_DOMAIN: https://carlosgarciacarmona.surge.sh
         with:
           # your surge.sh domain to deploy
-          domain: env.SURGE_DOMAIN
+          domain: 'https://carlosgarciacarmona.surge.sh'
           # surge.sh login
           login: ${{ secrets.SURGE_LOGIN }}
           # surge.sh token, generate it with `surge token` command
