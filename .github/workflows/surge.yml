@@ -90,9 +90,11 @@ jobs:
         # You may pin to the exact commit or the version.
         # uses: dswistowski/surge-sh-action@341bcbd76a97da5e6b55ad92f53c0bf840e04c80
         uses: dswistowski/surge-sh-action@v1
+        env:
+          SURGE_DOMAIN: https://carlosgarciacarmona.surge.sh
         with:
           # your surge.sh domain to deploy
-          domain: ${{ secrets.SURGE_DOMAIN }}
+          domain: env.SURGE_DOMAIN
           # surge.sh login
           login: ${{ secrets.SURGE_LOGIN }}
           # surge.sh token, generate it with `surge token` command
