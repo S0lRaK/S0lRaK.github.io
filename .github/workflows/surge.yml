@@ -37,7 +37,7 @@ jobs:
       - name: Set Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '14'
 
       # Install Node dependencies with NPM
       - name: Install dependencies
